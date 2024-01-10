@@ -38,9 +38,8 @@ body {
 }
 #authors {
   text-align: center;
-  margin: 25px auto;
+  margin: auto;
   width: 80%;
-  margin-bottom: 20px;
   font-size: 20px;
 }
 #conference {
@@ -155,6 +154,21 @@ p code {
 .spacertr {
   height: 8px;
 }
+
 .spacertd {
   width: 40px;
+}
+
+div.videoOverview{
+  text-align: center;
+}
+
+.titleStyle{
+  text-align: center;
+  margin: auto;
+  width: 95%;
+}
+
+p#authors a{
+  color: #4286f4;
 }
