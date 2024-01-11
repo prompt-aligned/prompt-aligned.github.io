@@ -3,7 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>PALP</title>
 <link href="./style.css" rel="stylesheet">
-
+<link href="./slider.css" rel="stylesheet">
 </head>
 
 <body>
@@ -52,10 +52,10 @@
     <script src="util.js" content="text/javascript"></script>
   </div>
 
-  <div id="artInspired" class="content">
+  <div id="multishotComparison" class="content">
     <h2 style="text-align:center;">Comparison to previous works</h2>
-    <p>PALP excels with complex prompts with multiple elements, including style, ambiance, places, etc. For each subject, we show a single exemplar from the training set, conditioning text, and comparisons to <a href="https://dreambooth.github.io/" target="_blank"> Dreambooth</a> and <a href="https://textual-inversion.github.io/" target="_blank">Textual-Inversion</a>, <a href="https://www.cs.cmu.edu/~custom-diffusion/" target="_blank"> Custom-Diffusion</a>, <a href="https://neuraltextualinversion.github.io/NeTI/" target="_blank">NeTI</a>, and <a href="https://prompt-plus.github.io/" target="_blank"> P+</a> baselines.</p>
-    <div><img src="data/comparison.png" class="summary-img" style="width: 100%; height: 100%; object-fit: contain;"></div>
+    <p>PALP <span class="highlight-yellow">excels with complex prompts</span> with multiple elements, including style, ambiance, places, etc. For each subject, we show a single exemplar from the training set, conditioning text, and comparisons to <a href="https://dreambooth.github.io/" target="_blank"> Dreambooth</a> and <a href="https://textual-inversion.github.io/" target="_blank">Textual-Inversion</a>, <a href="https://www.cs.cmu.edu/~custom-diffusion/" target="_blank"> Custom-Diffusion</a>, <a href="https://neuraltextualinversion.github.io/NeTI/" target="_blank">NeTI</a>, and <a href="https://prompt-plus.github.io/" target="_blank"> P+</a> baselines.</p>
+    <div><img src="data/comparison.png" class="summary-img" style="width: 100%; object-fit: contain;"></div>
   </div>
 
   <div id="artInspired" class="content">
@@ -71,6 +71,75 @@
       <div class="toy"><img class="artRefImage" src="./data/subjects/toy.jpg"></div>
       <div class="cat"><img class="artRefImage" src="./data/subjects/cat.jpg"></div>
     </div>
+  </div>
+
+  <div id="singleShotComparison" class="content">
+    <h2 style="text-align:center;">Single-Image Personalization</h2>
+    <p>PALP achieves high fidelity and prompt-aligned even from a <span class="highlight-red">single reference image</span>. Here we present a un-curated results of <span class="highlight-yellow">eight randomly sampled noises.</span></p>
+    <!-- Slideshow container -->
+      <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 5</div>
+          <img src="data/singleshot/vermeer.png" style="width:100%">
+          <div class="text">Vermeer</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 5</div>
+          <img src="data/singleshot/sketch.png" style="width:100%">
+          <div class="text">Sketch</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 5</div>
+          <img src="data/singleshot/popart.png" style="width:100%">
+          <div class="text">Pop-art</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 5</div>
+          <img src="data/singleshot/lineart.png" style="width:100%">
+          <div class="text">Line-art</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 5</div>
+          <img src="data/singleshot/caricature.png" style="width:100%">
+          <div class="text">Caricature</div>
+        </div>
+
+        <div class="mySlides fade" style="text-align: center;">
+          <div class="numbertext">Reference</div>
+          <img src="data/singleshot/reference.jpg" style="width:50%;">
+          <div class="text">Reference</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+        <span class="dot" onclick="currentSlide(6)"></span>
+      </div>
+      <script src="slider.js" content="text/javascript"></script>
+
+  </div>
+
+
+  <div id="multiSubjectComposition" class="content">
+    <h2 style="text-align:center;">Multi-subject Personalization</h2>
+    <p>PALP support <span class="highlight-blue"> multi-subject personalization</span>. Here are sample results for <span class="highlight-red">the cat and toy</span> subjects. The conditioned prompts are provided under the generated images.</p>
+    <div><img src="data/composition_web.jpg" class="summary-img" style="width: 100%; object-fit: contain;"></div>
   </div>
 
   
