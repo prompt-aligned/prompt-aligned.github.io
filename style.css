@@ -295,3 +295,5 @@ p#authors a{
 .toy { grid-area: toy;   text-align: center; display:grid; place-items: center; }
 
 .cat { grid-area: cat;   text-align: center; display:grid; place-items: center;}
+
+
