@@ -3,6 +3,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>PALP</title>
 <link href="./style.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -14,17 +15,12 @@
         <sup>1</sup> Google Research <sup>2</sup> Tel Aviv University <sup>3</sup> The Hebrew University of Jerusalem <sup>4</sup> Reichman University
     </p>
     <div class="videoOverview">
-    <video width="640" autoplay muted>
+    <video width=80% autoplay muted loop controls>
           <source src="data/Method-Overview.mp4" type="video/mp4">
     </video>
     </div>
 </div>
 
-
-<div class="content">
-  <h2 style="text-align:center;">Abstract</h2>
-  <p><i>Content creators often aim to create personalized images using personal subjects that go beyond the capabilities of conventional text-to-image models. Additionally, they may want the resulting image to encompass a specific location, style, ambiance, and more. Existing personalization methods may compromise personalization ability or the alignment to complex textual prompts. This trade-off can impede the fulfillment of user prompts and subject fidelity. We propose a new approach focusing on personalization methods for a <b>single</b> prompt to address this issue. We term our approach prompt-aligned personalization. While this may seem restrictive, our method excels in improving text alignment, enabling the creation of images with complex and intricate prompts, which may pose a challenge for current techniques. In particular, our method keeps the personalized model aligned with a target prompt using an additional score distillation sampling term. We demonstrate the versatility of our method in multi- and single-shot settings and further show that it can compose multiple subjects or use inspiration from reference images, such as artworks. We compare our approach quantitatively and qualitatively with existing baselines and state-of-the-art techniques.</i></p>
-</div>
 
 
 <div class="content">
@@ -34,11 +30,50 @@
     <img class="summary-img" src="./data/teaser.png" style="width:100%;"> <br>
   </div>
 
+  <div class="content">
+    <h2 style="text-align:center;">Abstract</h2>
+    <p><i>Content creators often aim to create personalized images using personal subjects that go beyond the capabilities of conventional text-to-image models. Additionally, they may want the resulting image to encompass a specific location, style, ambiance, and more. Existing personalization methods may compromise personalization ability or the alignment to complex textual prompts. This trade-off can impede the fulfillment of user prompts and subject fidelity. We propose a new approach focusing on personalization methods for a <b>single</b> prompt to address this issue. We term our approach prompt-aligned personalization. While this may seem restrictive, our method excels in improving text alignment, enabling the creation of images with complex and intricate prompts, which may pose a challenge for current techniques. In particular, our method keeps the personalized model aligned with a target prompt using an additional score distillation sampling term. We demonstrate the versatility of our method in multi- and single-shot settings and further show that it can compose multiple subjects or use inspiration from reference images, such as artworks. We compare our approach quantitatively and qualitatively with existing baselines and state-of-the-art techniques.</i></p>
+  </div>
 
-<div id="results" class="content">
-  <h2>Results</h2>
-  <p>TODO</b>  </p>
-</div>
+  <div id="method" class="content">
+    <h2 style="text-align:center;">How does it work?</h2>
+    <div id="methodContainer">
+      <div class="personalization">
+        <img src="data/method_personalization.png" alt="Personalization" style="width: 100%;"">
+      </div>
+      <div class="alignment">
+        <img src="data/method_alignment.png" alt="Alignment" style="width: 100%;">
+      </div>
+    </div>
+    <ul id="test">
+      <li class="personalization"><div><b><span class="highlight-yellow"> Personalization: </span></b> We achieve personalization by fine-tuning the pre-trained model using a simple reconstruction loss. We used DreamBooth-LoRA and TextualInversion personalization methods; however, any personalization method would work.</div></li><br>
+      <li class="alignment"><div><b> <span class="highlight-blue"> Prompt-Alignment: </span></b> To keep the model aligned with the target prompt, we use score sampling to pivot the prediction towards the direction of the target prompt, e.g., <span class="highlight-red">”A sketch of a cat.”</span> </div></li>
+    </ul>
+    <script src="util.js" content="text/javascript"></script>
+  </div>
+
+  <div id="artInspired" class="content">
+    <h2 style="text-align:center;">Comparison to previous works</h2>
+    <p>PALP excels with complex prompts with multiple elements, including style, ambiance, places, etc. For each subject, we show a single exemplar from the training set, conditioning text, and comparisons to <a href="https://dreambooth.github.io/" target="_blank"> Dreambooth</a> and <a href="https://textual-inversion.github.io/" target="_blank">Textual-Inversion</a>, <a href="https://www.cs.cmu.edu/~custom-diffusion/" target="_blank"> Custom-Diffusion</a>, <a href="https://neuraltextualinversion.github.io/NeTI/" target="_blank">NeTI</a>, and <a href="https://prompt-plus.github.io/" target="_blank"> P+</a> baselines.</p>
+    <div><img src="data/comparison.png" class="summary-img" style="width: 100%; height: 100%; object-fit: contain;"></div>
+  </div>
+
+  <div id="artInspired" class="content">
+    <h2 style="text-align:center;">Art Inspired Personalization</h2>
+    <p>PALP can generate scenes inspired by a single artistic image by ensuring alignment with the target prompt,  <span class="highlight-grey">""An oil painting of a <b>[toy / cat]</b>"."</span></p>
+    <div class="artContainer">
+      <div class="boyar"><img class="artImage" src="./data/art_inspired/boyar.jpg"></div>
+      <div class="ballet"><img class="artImage" src="./data/art_inspired/ballet.jpg"></div>
+      <div class="saturday"><img class="artImage" src="./data/art_inspired/saturday.jpg"></div>
+      <div class="vangogh"><img class="artImage" src="./data/art_inspired/vangogh.jpg"></div>
+      <div class="toyResult"><img class="resultImage" src="./data/art_inspired/boyar_toy.jpg"></div>
+      <div class="catResult"><img class="resultImage" src="./data/art_inspired/boyar_cat.jpg"></div>
+      <div class="toy"><img class="artRefImage" src="./data/subjects/toy.jpg"></div>
+      <div class="cat"><img class="artRefImage" src="./data/subjects/cat.jpg"></div>
+    </div>
+  </div>
+
+  
 
 <<div class="content">
   <h2>BibTex</h2>
@@ -55,6 +90,7 @@
   <p><strong>Acknowledgements</strong>:
   </p>
 </div> -->
+<script content="text/javascript">initArtSelection();</script>
 </body>
 
 
