@@ -209,15 +209,14 @@ p#authors a{
 
 .artContainer {  display: grid;
   margin-top: 5%;
-  grid-template-columns: 1fr 2fr 1.5fr;
-  grid-template-rows:  1fr 1fr 1fr 1fr;
-  gap: 0% 1%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:  0.5fr 1fr 1fr;
+  gap: 2% 0%;
   grid-auto-flow: row;
   grid-template-areas:
-    "toy toyResult boyar"
-    "toy toyResult ballet"
-    "cat catResult saturday"
-    "cat catResult vangogh";
+    "boyar ballet saturday vangogh"
+    "toy artResult artResult artResult"
+    "cat artResult artResult artResult";
 }
 
 .artImage {
@@ -260,13 +259,22 @@ p#authors a{
  }
 
  .artRefImage {
+  -webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
   display: block;
-  width: auto;
+  width: 80%;
   height: auto;
-  max-width: 150px; 
-  max-height: 150px;
+  margin: auto;
  }
-
+ 
+ .artRefImageSelected {
+  display: block;
+  width: 80%;
+  height: auto;
+  margin: auto;
+ }
 
 .artImage:hover{
   box-shadow: 0px 4px 8px 0px rgb(0,0,0,0.5);
@@ -284,10 +292,9 @@ p#authors a{
 
 .vangogh { grid-area: vangogh;   text-align: center; }
 
-.toyResult { grid-area: toyResult;   text-align: center;}
+.artResult { grid-area: artResult;   text-align: right; display: grid; place-items: center;}
 
-.catResult { grid-area: catResult;   text-align: center;}
 
-.toy { grid-area: toy;   text-align: center;}
+.toy { grid-area: toy;   text-align: center; display:grid; place-items: center; }
 
-.cat { grid-area: cat;   text-align: center;}
+.cat { grid-area: cat;   text-align: center; display:grid; place-items: center;}
